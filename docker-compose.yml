@@ -3,6 +3,6 @@ services:
     build: .
     container_name: yohub-image-backend
     ports:
-      - "5002:5002"
+      - "5005:5005"
     restart: always
 
