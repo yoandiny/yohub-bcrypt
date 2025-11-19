@@ -2,10 +2,11 @@ const express = require('express');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
 
+const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const app = express();
+
 
 app.post('/check', (req, res) => {
     const {password, hash} = req.body;
