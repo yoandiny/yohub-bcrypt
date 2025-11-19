@@ -10,6 +10,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the Password Hashing API');
+});
+
 app.post('/check', (req, res) => {
     const {password, hash} = req.body;
     bcrypt.compare(password, hash, (err, result) => {
