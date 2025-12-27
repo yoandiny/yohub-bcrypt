@@ -5,4 +5,7 @@ services:
     ports:
       - "5000:5000"
     restart: always
-
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.backend.rule=Host(`api.tondomaine.com`)"
+      - "traefik.http.services.backend.loadbalancer.server.port=5000"
